@@ -1,0 +1,32 @@
+Funcion calc(){
+variables:
+ Num1
+ Num2
+Operator
+ Res
+ methods(){
+ Sum()
+ Rest()
+ Multiply()
+ Divide()
+ Operate()
+ Result_to_num1()
+ }
+ Functions for each number 0-9 and decimal point.
+}
+ ==============
+Html
+ A main container
+ A non-typable multi-display
+ A container for the buttons
+ A buttons-grid
+ ================
+ Description:
+ There should be a main function that runs the program at content load
+ The variables could be contained in the main function // variables may become an object at convenience to handle information.
+ There is a calculator function that has methods or sub-functions for each operation and functionality.
+ //numbers
+ Each number + the . Which writes to num variables (it should be parsed as double) and update the display.
+ //operators
+Each operator chooses the kind of operation to be performed and switch from writing in num1 to num2 unless it is empty (there could be a function dedicated to that for every oeration). // screen update
+There is an operate function that executes the calculation and updates the display// sets the result as the num 1. // calculation should only be performed if data !== undefined.
