@@ -43,8 +43,8 @@ const main = (function() {
             }
             else if (button.id === 'equals'){
                 if (calculator.num[0] !== '' && calculator.num[1] !== '' && calculator.operation !== ''){
-                    calculator.result = calculator.calculate();
-                    calculator.num[0] = calculator.result.toString();
+                    calculator.result = calculator.calculate().toString();
+                    calculator.num[0] = calculator.result;
                     calculator.num[1] = '';
                     calculator.operation = '';
                     calculator.com = 0;
@@ -63,7 +63,7 @@ const main = (function() {
             else if (button.id === 'point'){
                 if(calculator.num[calculator.com].length > 0 && !(calculator.num[calculator.com].includes('.'))){
                     calculator.num[calculator.com] += '.';
-                    displays[calculator.com].innerHTML = calculator.num[calculator.com];
+                    displays[0].innerHTML = calculator.num[calculator.com];
                 }      
                 
             }           
