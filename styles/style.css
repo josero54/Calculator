@@ -77,32 +77,42 @@ border-radius: 10px;
     
 }
 #secondary_display_text{
+    display: flex;
+    flex-wrap: wrap;
     text-align: end;
     margin: 3px;
+    overflow: auto;
+    word-break: break-all;
     
 }
 #operator_display_text{
     text-align: end;
     margin: 3px;
+    overflow: auto;
 
 }
 #main_display{
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
+    flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
     width:100%;
     background-color:rgb(111, 200, 248);
-    overflow: hidden;
+    overflow: auto;
     padding-right: 3px;
     
 }
 #main_display_text{
-    text-align: end;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: flex-end;
+    justify-content: flex-end;
     margin: 5px;
     width: 94.5%;
-    overflow: hidden;
+    overflow: auto;
+    word-break: break-all;
 }
 
 #buttons_container{
