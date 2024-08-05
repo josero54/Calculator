@@ -61,8 +61,8 @@ const main = (function() {
              displays[2].innerHTML = '';
             }
             else if (button.id === 'point'){
-                if(calculator.num[calculator.com].length > 0 && !(calculator.num[0].includes('.'))){
-                    calculator.num[0] += '.';
+                if(calculator.num[calculator.com].length > 0 && !(calculator.num[calculator.com].includes('.'))){
+                    calculator.num[calculator.com] += '.';
                     displays[calculator.com].innerHTML = calculator.num[calculator.com];
                 }      
                 
@@ -86,7 +86,7 @@ const main = (function() {
             document.getElementById('equals').click();
         }
         // Clear
-        else if (key === 'Escape' || key === 'c' || key === 'C') {
+        else if (key === 'Delete' || key === 'c' || key === 'C') {
             document.getElementById('clear').click();
         }
         // Decimal point
