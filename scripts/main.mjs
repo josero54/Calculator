@@ -43,16 +43,21 @@ const main = (function() {
             }
             else if (button.id === 'equals'){
                 if (calculator.num[0] !== '' && calculator.num[1] !== '' && calculator.operation !== ''){
-                    calculator.result = calculator.calculate().toString();
-                    calculator.num[0] = calculator.result;
-                    calculator.num[1] = '';
-                    calculator.operation = '';
-                    calculator.com = 0;
-                    displays[0].innerHTML = calculator.num[0];
-                    displays[1].innerHTML = calculator.num[1];
-                    displays[2].innerHTML = calculator.operation;
+                    calculator.result = calculator.calculate();
+                    if (typeof calculator.result === 'string' && calculator.result.startsWith('Error')) {
+                        displays[0].innerHTML = calculator.result;
+                        calculator.clear();
+                    } else {
+                        calculator.result = calculator.result.toString();
+                        calculator.num[0] = calculator.result;
+                        calculator.num[1] = '';
+                        calculator.operation = '';
+                        calculator.com = 0;
+                        displays[0].innerHTML = calculator.num[0];
+                        displays[1].innerHTML = calculator.num[1];
+                        displays[2].innerHTML = calculator.operation;
+                    }
                 }
-                    
             }
             else if (button.id === 'clear'){
              calculator.clear();
@@ -111,7 +116,6 @@ const main = (function() {
             this.com = 0;
         },
         calculate: function() {
-            
             switch(this.operation) {
                 case '+':
                     this.com = 0;
@@ -124,9 +128,10 @@ const main = (function() {
                     return parseFloat(this.num[0]) * parseFloat(this.num[1]);
                 case '/':
                     this.com = 0;
+                    if (parseFloat(this.num[1]) === 0) {
+                        return 'Error';
+                    }
                     return parseFloat(this.num[0]) / parseFloat(this.num[1]);
-    
-                // Add other cases here
                 default:
                     return '';
             }
